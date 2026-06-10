@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Funngro SEO Audit Report</title>
+    <meta
+      name="description"
+      content="SEO audit report for Funngro covering metadata, canonical setup, sitemap, robots, structured data, content opportunities and technical SEO fixes."
+    />
+    <style>
+      :root {
+        --ink: #0d1b2a;
+        --muted: #607083;
+        --line: #dbe3ec;
+        --green: #16b86f;
+        --blue: #2d6cdf;
+        --paper: #ffffff;
+        --mist: #f4f7fb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--mist);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        width: min(1040px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0;
+      }
+
+      header,
+      section {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        padding: 28px;
+        margin-bottom: 18px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: 46px;
+        line-height: 1.05;
+      }
+
+      h2 {
+        margin-bottom: 14px;
+        font-size: 28px;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      p,
+      li,
+      td,
+      th {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      strong,
+      th {
+        color: var(--ink);
+      }
+
+      .eyebrow {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .summary {
+        font-size: 18px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 14px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #eef4ff;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      a {
+        color: var(--blue);
+        font-weight: 800;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .meta-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        background: #fbfdff;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          width: min(100% - 24px, 1040px);
+          padding: 28px 0;
+        }
+
+        header,
+        section {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 34px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">SEO audit report</p>
+        <h1>Funngro SEO Audit</h1>
+        <p class="summary">
+          Audit date: 10 June 2026. Scope checked: homepage, earn page,
+          brand page, robots file and sitemap.
+        </p>
+      </header>
+
+      <section>
+        <h2>Executive Summary</h2>
+        <p>
+          Funngro already has a strong SEO base: clear homepage metadata, Open
+          Graph tags, Twitter tags, schema markup, a public robots file and a
+          sitemap that includes earning, brand, story, blog, trust and legal
+          pages. The biggest opportunity is route-level SEO. The initial HTML
+          returned for the earn and brand routes currently uses homepage
+          metadata and a homepage canonical, so those pages may not get full
+          value in non-JavaScript crawlers, link previews and some SEO tools.
+        </p>
+      </section>
+
+      <section>
+        <h2>What Is Working Well</h2>
+        <ul>
+          <li>Homepage title and description clearly position Funngro around online earning and large brand campaigns.</li>
+          <li>The robots file allows crawl access and points to the sitemap.</li>
+          <li>The sitemap includes major pages such as earn, brands, stories, blog, trust, FAQ, contact, careers and legal pages.</li>
+          <li>Homepage Open Graph and Twitter card metadata are present for social sharing.</li>
+          <li>Organization and WebSite structured data are present.</li>
+          <li>Security headers such as HSTS, referrer policy and content type protection are present.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Priority Issues</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Finding</th>
+              <th>Why It Matters</th>
+              <th>Recommended Fix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td>Canonical host is inconsistent across www, non-www and sitemap URLs.</td>
+              <td>Mixed signals can split ranking equity and confuse reporting.</td>
+              <td>Pick one canonical host, then update redirects, canonicals, sitemap URLs and social URLs.</td>
+            </tr>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td>Earn and brand routes return homepage metadata in initial HTML.</td>
+              <td>Route-specific pages may not rank or preview correctly if metadata only appears after JavaScript runs.</td>
+              <td>Pre-render or server-render public routes with unique title, description, canonical, OG tags and schema.</td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td>Main JavaScript appears heavy for a marketing route.</td>
+              <td>Large JavaScript can affect mobile Core Web Vitals.</td>
+              <td>Run Lighthouse, split non-critical sections, defer analytics and keep above-the-fold CSS lean.</td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td>High-intent keywords can be mapped more directly to route headings and internal links.</td>
+              <td>Explicit intent mapping helps search engines understand each page.</td>
+              <td>Target teen earning and Gen Z campaign keywords on dedicated sections.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Recommended Page Metadata</h2>
+        <div class="grid">
+          <div class="meta-card">
+            <h3>Teen / Earn Page</h3>
+            <p><strong>Title:</strong> How to Earn Online as a Teen in India | Funngro</p>
+            <p>
+              <strong>Description:</strong> Start earning online with Funngro by
+              completing brand campaigns, referrals, content, surveys and app
+              testing. Learn skills and get paid through UPI.
+            </p>
+            <p>
+              <strong>Keywords:</strong> earn online as a teen in India, teen
+              earning app, UPI earning, student freelancing, brand promotion app
+            </p>
+          </div>
+          <div class="meta-card">
+            <h3>Company / Brand Page</h3>
+            <p><strong>Title:</strong> Funngro for Brands | Gen Z Campaigns and Teen Creators</p>
+            <p>
+              <strong>Description:</strong> Launch brand promotion, sampling,
+              UGC, surveys, referrals and app testing campaigns with Funngro's
+              verified network of young Indian creators.
+            </p>
+            <p>
+              <strong>Keywords:</strong> Gen Z marketing India, hire teen
+              creators, campus ambassador campaigns, UGC creators India, app
+              testing India
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Content Opportunities</h2>
+        <ul>
+          <li>Add a guide for teens on earning online safely in India.</li>
+          <li>Add parent trust content around safety, verification and payout rules.</li>
+          <li>Add brand landing pages by vertical: fintech, D2C, FMCG, edtech, gaming and beauty.</li>
+          <li>Add case-study pages with objective, cohort, proof type, completion rate and learning.</li>
+          <li>Strengthen internal links from blog pages to earn, brands, trust and FAQ pages.</li>
+          <li>Add page-specific OG images for teen earners, brand campaigns and success stories.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Technical SEO Checklist</h2>
+        <ul>
+          <li>Use one canonical host across site, sitemap and social tags.</li>
+          <li>Pre-render public routes or use server-side rendering for route metadata.</li>
+          <li>Keep each route to one clear H1.</li>
+          <li>Add descriptive image alt text and explicit image width and height where possible.</li>
+          <li>Add breadcrumb schema on nested pages.</li>
+          <li>Validate sitemap after every deployment.</li>
+          <li>Monitor Google Search Console for indexed pages, duplicate canonicals and Core Web Vitals.</li>
+          <li>Run Lighthouse on mobile and fix LCP, CLS and INP issues before launch.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sources Checked</h2>
+        <ul>
+          <li><a href="https://www.funngro.com/">https://www.funngro.com/</a></li>
+          <li><a href="https://www.funngro.com/earn">https://www.funngro.com/earn</a></li>
+          <li><a href="https://www.funngro.com/for-brands">https://www.funngro.com/for-brands</a></li>
+          <li><a href="https://www.funngro.com/robots.txt">https://www.funngro.com/robots.txt</a></li>
+          <li><a href="https://www.funngro.com/sitemap.xml">https://www.funngro.com/sitemap.xml</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
